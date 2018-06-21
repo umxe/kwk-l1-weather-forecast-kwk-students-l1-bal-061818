@@ -26,18 +26,20 @@ end
 # You'll want to use the each method to iterate over the hash and print out
 # `The city is New York.` `The description is Partly Cloudy.` `The temperature is 66.3.`
 def meth1(weather)
-weather.each_pair { |key, value| return "
-The #{key.inspect} is #{value}"}
+  weather.each_pair { |key, value| return "
+  The #{key.inspect} is #{value}"}
 end
 
 # BONUS:  Write a method that takes in the weather hash as an argument and converts the farenheit temperature to celcius. Have the method round your answer to two decimal places. Is there a method we can use to round in Ruby?
 
 # Hint - how can we find the algorithm to convert Farenheit to Celsius?
-def fToC
-  
+def fToC(weather)
+  return (weather[:temperature_farenheit] - 32) * 5/9
+end
 
 
 puts location(weather)
 puts description(weather)
 puts weatherD(weather)
 puts meth1(weather)
+puts fToC(weather).round(2)
